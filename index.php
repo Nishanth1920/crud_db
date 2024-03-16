@@ -7,29 +7,28 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
-<body>
+<body style="background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=740&t=st=1710478849~exp=1710479449~hmac=c1b2c5635922a7aaf7cef296aa08fd60ee84c8f446efb780c0951b07b2b7289a);">
 
-<div class="container mt-5" style="width: 60%;">
+<div class="container" style="width: 60%;">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Login</h5>
-                </div>
+            <div class="card shadow-lg p-4 mb-5 bg-white rounded mx-auto" style="width: 100%; margin-top: 100px;">
                 <div class="card-body">
+                <h3 class="card-title"> Login </h3>
                     <div id="alert" class="alert alert-danger d-none" role="alert"></div>
                     <form id="loginForm" method="post" >
                         <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+                            <label for="name" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="@ Username">
                             <div class="invalid-feedback">Name is required</div>
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                             <div class="invalid-feedback">Password is required</div>
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>
+                        
                     </form>
                 </div>
             </div>

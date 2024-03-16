@@ -37,7 +37,7 @@
             if ($result->num_rows > 0) {
                 $row = $result->fetch_assoc();
         ?>
-                <div class="card">
+                <div class="card shadow-lg p-3 mb-5 bg-body rounded">
                     <div class="card-body">
                         <form method="POST" action="update.php">
                             <input type="hidden" name="id" value="<?php echo $id; ?>">
@@ -57,8 +57,8 @@
                                 <label for="name" class="form-label">Password</label>
                                 <input type="text" class="form-control" name="password" value="<?php echo $row['password']; ?>">
                             </div>
-                            <button type="submit" class="btn btn-primary">Update</button>
-                            <a href="read.php"><button type="submit" class="btn btn-primary">Cancel</button></a>
+                            <button type="submit" class="btn btn-success">Update</button>
+                            <a href="read.php"><button type="submit" class="btn btn-danger">Cancel</button></a>
                         </form>
                     </div>
                 </div>

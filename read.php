@@ -34,18 +34,18 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     <body>
 
-        <div class="container" style="margin-top: 20px; ">
+        <div class="container p-4" style="margin-top: 20px; width: 85%;">
             <div>
-                <h3>Uploaded Data</h3>
+                <h3>Existing Users</h3>
             </div>
 
             <div class="d-flex justify-content-between mt-3" >
-                <a href="adduser.php" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Go to the Page" style="margin-bottom: 10px;"> Add User <i class="bi bi-person-add"></i></a>
-                <a href="logout.php" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Go to the Page" style="margin-bottom: 10px;"> Log Out <i class="bi bi-box-arrow-right"></i></a>
+                <a href="adduser.php" class="btn btn-primary" style="margin-bottom: 10px;"> Add User <i class="bi bi-person-fill-add"></i></a>
+                <a href="logout.php" class="btn btn-danger"  style="margin-bottom: 10px;"> Log Out <i class="bi bi-box-arrow-right"></i></a>
                 
             </div>
             
-            <table class="table table-hover" id="userTable" style="cursor: pointer;">
+            <table class="table table-hover shadow-lg p-3 mb-5 bg-body rounded" id="userTable" style="cursor: pointer;">
                 <thead>
                     <tr>
                         <th>ID</th>

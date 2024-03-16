@@ -1,3 +1,14 @@
+<?php
+// Start the session
+session_start();
+
+// Check if user is not logged in, redirect to index.php
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: index.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -18,10 +29,10 @@
         <div>
             <h3 style="margin-bottom: 20px; margin-top: 20px;" class="px-3">CRUD OPERATION-ADD USER</h3>
         </div>
-        <div class="card">
+        <div class="card shadow-lg p-3 mb-5 bg-body rounded">
             <div class="card-body">
                 <form method="POST" action="adduserError.php" id="loginForm" > <!-- Change action to your PHP script -->
-                <div id="alert" class="alert alert-danger d-none" role="alert"></div>
+                <!-- <div id="alert" class="alert alert-danger d-none" role="alert"></div> -->
                     <div class="mb-3">
                         <label for="name" class="form-label">
                             <h6>Name</h6>
@@ -51,13 +62,10 @@
                         <input type="password" id="password" class="form-control" name="password" placeholder="Enter Your Password">
                          <div class="invalid-feedback">Password is required</div>
                     </div>
-                    <div class="d-grid gap-2">
+                    
                         <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
-                    <div class="d-grid gap-2">
-                       <a href="read.php"><button type="text" class="btn btn-primary mt-2 ">Cancel</button></a>
-                    </div>
-
+                        <a href="read.php" class="btn btn-secondary btn-md active" role="button" aria-pressed="true">Cancel</a>
+        
                 </form>
             </div>
         </div>
