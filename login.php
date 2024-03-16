@@ -6,7 +6,10 @@ session_start();
 if(isset($_POST['name']) && isset($_POST['password'])) {
     // Get input data
     $name = $_POST['name'];
-    $cpassword = $_POST['password'];
+    $cpassword = md5($_POST['password']);
+    // echo($cpassword);
+    // exit;
+   
 
     // Connect to the database
     $servername = "localhost";
@@ -24,6 +27,8 @@ if(isset($_POST['name']) && isset($_POST['password'])) {
     // Prepare and execute SQL query to check user credentials
     $sql = "SELECT * FROM userdetails WHERE name='$name' AND password='$cpassword'";
     $result = $conn->query($sql);
+    // echo($result->num_rows);
+    // exit;
 
     if($result->num_rows > 0) {
         // Login successful

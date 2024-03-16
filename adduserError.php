@@ -5,7 +5,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
     $email = $_POST['email'];
     $country = $_POST['country'];
-    $cpassword = $_POST['password'];
+    $cpassword = md5($_POST['password']); // Encrypt password using MD5
 
     // Validate form data
     $errors = [];
@@ -22,12 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errors[] = "Password is required";
     }
 
-    // If there are validation errors, redirect back to index.php with errors
-    if (!empty($errors)) {
-        $errorString = implode(',', $errors);
-        header("Location: adduser.php?error=$errorString");
-        exit();
-    } else {
+    else {
         // Connect to the database
         $servername = "localhost";
         $username = "root";
@@ -45,13 +40,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $insert = "INSERT INTO userdetails (name, email, country, password)
                 VALUES ('$name', '$email', '$country', '$cpassword')";
 
+                
+
         // Execute SQL statement
         if ($conn->query($insert) === TRUE) {
-            // echo "New record created successfully";
-            header("Location: read.php");
+                
+            echo "success";
+            // header("Location: read.php");
             exit();
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo " successfully";
+             
+
+            // echo "Error: " . $sql . "<br>" . $conn->error;
         }
 
         // Close the database connection

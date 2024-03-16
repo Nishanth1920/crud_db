@@ -40,7 +40,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
 
             <div class="d-flex justify-content-between mt-3" >
-                <a href="adduser.php" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Go to the Page" style="margin-bottom: 10px;"> Add User <i class="bi bi-person-add"></i></a>
+                <a href="adduser.php" class="btn btn-primary" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Go to the Page" style="margin-bottom: 10px;"> Add User <i class="bi bi-person-add"></i></a>
                 <a href="logout.php" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Go to the Page" style="margin-bottom: 10px;"> Log Out <i class="bi bi-box-arrow-right"></i></a>
                 
             </div>

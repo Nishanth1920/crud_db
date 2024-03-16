@@ -18,7 +18,7 @@
                 </div>
                 <div class="card-body">
                     <div id="alert" class="alert alert-danger d-none" role="alert"></div>
-                    <form id="loginForm">
+                    <form id="loginForm" method="post" >
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
@@ -43,6 +43,8 @@
             e.preventDefault();
             var name = $('#name').val();
             var password = $('#password').val();
+            // console.log(name);
+            // console.log(password);
             
             // Validate inputs
             if (name.trim() === '') {
