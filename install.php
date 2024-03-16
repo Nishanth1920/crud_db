@@ -61,9 +61,7 @@ try {
 
     // ...............................ALTER A TABLE.......................................
 
-    // $alt = "ALTER TABLE userdetails
-    //        ADD COLUMN IF NOT EXISTS country VARCHAR(50),
-    //        ADD COLUMN IF NOT EXISTS mobile_no VARCHAR(15)";
+    // $alt = "ALTER TABLE userdetails CHANGE username name  VARCHAR(255) NOT NULL";
 
     // // Execute query
     // if ($conn->query($alt) === TRUE) {

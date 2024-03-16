@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // If there are validation errors, redirect back to index.php with errors
     if (!empty($errors)) {
         $errorString = implode(',', $errors);
-        header("Location: index.php?error=$errorString");
+        header("Location: adduser.php?error=$errorString");
         exit();
     } else {
         // Connect to the database

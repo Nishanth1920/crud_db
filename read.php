@@ -1,3 +1,14 @@
+<?php
+// Start the session
+session_start();
+
+// Check if user is not logged in, redirect to index.php
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: index.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -27,9 +38,13 @@
             <div>
                 <h3>Uploaded Data</h3>
             </div>
-            <div class="d-flex justify-content-end">
-                <a href="index.php" class="btn btn-dark" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Go to the Page" style="margin-bottom: 10px;">Add User</a>
+
+            <div class="d-flex justify-content-between mt-3" >
+                <a href="adduser.php" class="btn btn-success" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Go to the Page" style="margin-bottom: 10px;"> Add User <i class="bi bi-person-add"></i></a>
+                <a href="logout.php" class="btn btn-danger" data-bs-toggle="tooltip" data-bs-placement="left" title="" data-bs-original-title="Go to the Page" style="margin-bottom: 10px;"> Log Out <i class="bi bi-box-arrow-right"></i></a>
+                
             </div>
+            
             <table class="table table-hover" id="userTable" style="cursor: pointer;">
                 <thead>
                     <tr>
@@ -44,6 +59,8 @@
                 </thead>
                 <tbody>
                     <?php
+
+                
                     // Connect to your database
                     $servername = "localhost";
                     $username = "root";
@@ -93,7 +110,7 @@
                 $('#userTable').DataTable({
                     "lengthMenu": [
                         [-1, 20, 15, 10],
-                        ["All",20,15,10]
+                        ["All", 20, 15, 10]
                     ] // Custom entries for number of records per page
                 });
             });
