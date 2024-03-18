@@ -108,7 +108,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 </tbody>
             </table>
         </div>
- 
+
         <!-- ......................................addUser Modal......................................... -->
 
         <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
@@ -141,7 +141,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                                 <div class="invalid-feedback">Password is required</div>
                             </div>
                             <div id="addError" class="alert alert-danger d-none" role="alert"></div>
-                            <button type="submit" class="btn btn-primary"><i class="bi bi-download"></i> Add</button>
+                            <button type="submit" class="btn btn-primary"><i class="bi bi-plus"></i> Add</button>
                             <a href="read.php" class="btn btn-secondary btn-md active" class="btn-close" data-bs-dismiss="modal" aria-label="Close" role="button" aria-pressed="true">Cancel</a>
                         </form>
                     </div>
@@ -184,7 +184,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 });
             });
         </script>
-        
+
         <script>
             $(document).ready(function() {
                 // Handle delete button click
@@ -194,6 +194,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 });
             });
         </script>
+
         <script>
             $(document).ready(function() {
                 $('#addUserForm').submit(function(e) {
@@ -248,7 +249,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
 
-       
+
 
     </body>
 
