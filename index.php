@@ -28,8 +28,11 @@
                             <div class="invalid-feedback">Password is required</div>
                         </div>
                         <button type="submit" class="btn btn-primary">Login</button>
-                        
                     </form>
+                     <!-- Facebook login button -->
+                     <!-- <div class="mb-3">
+                        <br><button onclick="fbLogin()" class="btn btn-primary">Login with Facebook</button>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -74,6 +77,33 @@
         });
     });
 </script>
+
+<!-- Include Facebook SDK script -->
+<!-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '11397366403601',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v13.0'
+    });
+  };
+
+  function fbLogin() {
+    FB.login(function(response) {
+      if (response.authResponse) {
+        console.log('Successful login for: ' + response.name);
+        // Redirect or handle login success
+        window.location.href = 'callback.php';
+      } else {
+        console.log('User cancelled login or did not fully authorize.');
+      }
+    });
+  }
+</script>
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script> -->
+
 
 </body>
 </html>
