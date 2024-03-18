@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Page</title>
+    <title>CRUD-Edit user</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body style="background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=740&t=st=1710478849~exp=1710479449~hmac=c1b2c5635922a7aaf7cef296aa08fd60ee84c8f446efb780c0951b07b2b7289a);">
 
-    <div class="container" style="margin-top: 20px; width: 50%;">
-        <h3>Edit User</h3>
+    <div class="container" style="margin-top: 50px; width: 50%;">
+        <h3>CRUD-Edit user</h3><br>
         <?php
         // Check if ID is provided in URL parameter
         if (isset($_GET['id'])) {

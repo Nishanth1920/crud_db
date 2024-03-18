@@ -47,8 +47,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
 
             <div class="d-flex justify-content-between mt-3">
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal" style="margin-bottom: 10px;"> Add User <i class="bi bi-person-fill-add"></i></a>
-                <a href="logout.php" class="btn btn-danger" style="margin-bottom: 10px;"> Log Out <i class="bi bi-box-arrow-right"></i></a>
+                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal" style="margin-bottom: 10px;"> <i class="bi bi-person-fill-add"></i> Add User</a>
+                <a href="logout.php" class="btn btn-danger" style="margin-bottom: 10px;"><i class="bi bi-box-arrow-left"></i> Log Out</a>
             </div>
 
             <table class="table table-hover shadow-lg p-3 mb-5 bg-body rounded" id="userTable" style="cursor: pointer;">
@@ -115,7 +115,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+                        <h5 class="modal-title" id="addUserModalLabel">CRUD-New User</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
