@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reset Password</title>
+    <title>CRUD-Reset</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="card-body">
                         <h3 class="card-title">Reset Password</h3>
                         <?php if (isset($error)) : ?>
-                            <div class="alert alert-danger" role="alert">
+                            <div class="alert alert-warning" role="alert">
                                 <?php echo $error; ?>
                             </div>
                         <?php endif; ?>

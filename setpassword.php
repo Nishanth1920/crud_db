@@ -39,9 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $pdo->prepare($sql);
         $stmt->execute(['password' => $hashedPassword, 'email' => $email]);
 
+        // Set success message
+        $success = "Password reset successfully.";
+
         // Redirect to a password reset success page or login page
-        header("Location: index.php");
-        exit();
+        // header("Location: index.php");
+        // exit();
     } else {
         $error = "Passwords do not match.";
     }
@@ -56,6 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Set New Password</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
 </head>
 
 <body style="background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=740&t=st=1710478849~exp=1710479449~hmac=c1b2c5635922a7aaf7cef296aa08fd60ee84c8f446efb780c0951b07b2b7289a);">
@@ -69,6 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php if (isset($error)) : ?>
                             <div class="alert alert-danger" role="alert">
                                 <?php echo $error; ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if (isset($success)) : ?>
+                            <div class="alert alert-success" role="alert">
+                                <?php echo $success; ?>
                             </div>
                         <?php endif; ?>
                         <form id="setPasswordForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
@@ -88,6 +97,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
+    <!-- Bootstrap Animation -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <strong class="me-auto">Notification</strong>
+                <small>Just now..</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Password reset successfully.
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Initialize Bootstrap toast
+        var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+        var toastList = toastElList.map(function(toastEl) {
+            return new bootstrap.Toast(toastEl);
+        });
+
+        // Show toast and redirect after 3 seconds
+        <?php if (isset($success)) : ?>
+            toastList[0].show();
+            setTimeout(function() {
+                window.location.href = "index.php";
+            }, 5000); // 3000 milliseconds = 3 seconds
+        <?php endif; ?>
+    </script>
 </body>
 
 </html>
