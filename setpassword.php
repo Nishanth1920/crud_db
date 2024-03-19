@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             toastList[0].show();
             setTimeout(function() {
                 window.location.href = "index.php";
-            }, 5000); // 3000 milliseconds = 3 seconds
+            }, 2000); // 2000 milliseconds = 2 seconds
         <?php endif; ?>
     </script>
 </body>
