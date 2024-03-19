@@ -205,7 +205,7 @@ $fb = new Facebook\Facebook([
     <script>
         $(document).ready(function() {
             var failedAttempts = 0;
-            var maxAttempts = 3; // Maximum number of allowed failed attempts
+            var maxAttempts = 2; // Maximum number of allowed failed attempts
             var lockoutDuration = 60; // Lockout duration in seconds
             var countdownInterval;
             var countdownRunning = false; // Flag to track if countdown is running
@@ -305,7 +305,7 @@ $fb = new Facebook\Facebook([
                             window.location.href = 'read.php';
                         } else {
                             failedAttempts++;
-                            if (failedAttempts >= 4) {
+                            if (failedAttempts >= 3) {
                                 // Display CAPTCHA if max attempts reached
                                 // $('#countryContainer').removeClass('d-none');
                                 countdownRunning = true; // Set countdown flag to true
