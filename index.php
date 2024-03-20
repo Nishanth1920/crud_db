@@ -155,7 +155,7 @@ $fb = new Facebook\Facebook([
                                 <input type="text" class="form-control" id="name" name="name" placeholder="@ Username">
                                 <div class="invalid-feedback">Name is required</div>
                             </div>
-                            <div class="mb-1">
+                            <div class="mb-2">
                                 <label for="password" class="form-label">Password</label>
                                 <div class="input-group">
                                     <input type="password" class="form-control" id="password" name="password" placeholder="Password">
@@ -193,7 +193,7 @@ $fb = new Facebook\Facebook([
                             </button>
                         </div>
                         <!-- Forgot Password Link -->
-                        <div class="mt-3">
+                        <div class="mt-3 d-flex justify-content-center">
                             <a href="forgotpassword.php">Forgot Password?</a>
                         </div>
                     </div>
